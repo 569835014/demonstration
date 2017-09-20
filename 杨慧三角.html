@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  function triangle(num) {
+    var arr=[[1],[1,1]];
+    if(num===1){
+      return [1]
+    }
+    for(var i=2;i<=num;i++){
+      arr[i]=[1];
+      for(var j=1;j<i;j++){
+        arr[i].push(arr[i-1][j-1]+arr[i-1][j])
+      }
+      arr[i].push(1)
+      if(arr[i].indexOf(num)>-1){
+        return arr
+      }
+    }
+    return arr
+  }
+  console.info(triangle(50));
+</script>
+</html>
